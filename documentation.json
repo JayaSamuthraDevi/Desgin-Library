@@ -1,0 +1,340 @@
+{
+    "pipes": [],
+    "interfaces": [],
+    "injectables": [],
+    "guards": [],
+    "interceptors": [],
+    "classes": [],
+    "directives": [],
+    "components": [],
+    "modules": [],
+    "miscellaneous": {
+        "variables": [
+            {
+                "name": "Danger",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: { variant: 'danger', size: 'md', label: 'Danger' },\n}"
+            },
+            {
+                "name": "Ghost",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: { variant: 'ghost', size: 'md', label: 'Ghost' },\n}"
+            },
+            {
+                "name": "Link",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: { variant: 'link', size: 'md', label: 'Link' },\n}"
+            },
+            {
+                "name": "Loading",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: { variant: 'primary', loading: true, label: 'Loading…' },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<CdsButton>",
+                "defaultValue": "{\n  title: 'Components/Button',\n  component: CdsButton,\n  tags: ['autodocs'],\n  argTypes: {\n    label: { control: 'text' },\n    variant: {\n      control: 'select',\n      options: ['primary', 'secondary', 'tertiary', 'ghost', 'danger', 'link'],\n    },\n    size: {\n      control: 'select',\n      options: ['sm', 'md', 'lg'],\n    },\n    disabled: { control: 'boolean' },\n    loading: { control: 'boolean' },\n  },\n  args: {\n    label: 'Button',\n    variant: 'primary',\n    size: 'md',\n    disabled: false,\n    loading: false,\n  },\n}"
+            },
+            {
+                "name": "preview",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": ".storybook/preview.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Preview",
+                "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: '^on[A-Z].*' },\n    docs: { autodocs: true },\n    controls: {\n      expanded: true,\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n  decorators: [\n    applicationConfig({\n      providers: [\n        provideZonelessChangeDetection(), // zoneless mode\n      ],\n    }),\n  ]\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: { variant: 'primary', size: 'md', label: 'Primary' },\n}"
+            },
+            {
+                "name": "Secondary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: { variant: 'secondary', size: 'md', label: 'Secondary' },\n}"
+            },
+            {
+                "name": "Tertiary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: { variant: 'tertiary', size: 'md', label: 'Tertiary' },\n}"
+            }
+        ],
+        "functions": [],
+        "typealiases": [
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<CdsButton>",
+                "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            }
+        ],
+        "enumerations": [],
+        "groupedVariables": {
+            "projects/carbon-angular/src/lib/components/button/button.stories.ts": [
+                {
+                    "name": "Danger",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: { variant: 'danger', size: 'md', label: 'Danger' },\n}"
+                },
+                {
+                    "name": "Ghost",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: { variant: 'ghost', size: 'md', label: 'Ghost' },\n}"
+                },
+                {
+                    "name": "Link",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: { variant: 'link', size: 'md', label: 'Link' },\n}"
+                },
+                {
+                    "name": "Loading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: { variant: 'primary', loading: true, label: 'Loading…' },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<CdsButton>",
+                    "defaultValue": "{\n  title: 'Components/Button',\n  component: CdsButton,\n  tags: ['autodocs'],\n  argTypes: {\n    label: { control: 'text' },\n    variant: {\n      control: 'select',\n      options: ['primary', 'secondary', 'tertiary', 'ghost', 'danger', 'link'],\n    },\n    size: {\n      control: 'select',\n      options: ['sm', 'md', 'lg'],\n    },\n    disabled: { control: 'boolean' },\n    loading: { control: 'boolean' },\n  },\n  args: {\n    label: 'Button',\n    variant: 'primary',\n    size: 'md',\n    disabled: false,\n    loading: false,\n  },\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: { variant: 'primary', size: 'md', label: 'Primary' },\n}"
+                },
+                {
+                    "name": "Secondary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: { variant: 'secondary', size: 'md', label: 'Secondary' },\n}"
+                },
+                {
+                    "name": "Tertiary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: { variant: 'tertiary', size: 'md', label: 'Tertiary' },\n}"
+                }
+            ],
+            ".storybook/preview.ts": [
+                {
+                    "name": "preview",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": ".storybook/preview.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Preview",
+                    "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: '^on[A-Z].*' },\n    docs: { autodocs: true },\n    controls: {\n      expanded: true,\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n  decorators: [\n    applicationConfig({\n      providers: [\n        provideZonelessChangeDetection(), // zoneless mode\n      ],\n    }),\n  ]\n}"
+                }
+            ]
+        },
+        "groupedFunctions": {},
+        "groupedEnumerations": {},
+        "groupedTypeAliases": {
+            "projects/carbon-angular/src/lib/components/button/button.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<CdsButton>",
+                    "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ]
+        }
+    },
+    "routes": [],
+    "coverage": {
+        "count": 0,
+        "status": "low",
+        "files": [
+            {
+                "filePath": ".storybook/preview.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "preview",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Danger",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Ghost",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Link",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Loading",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Tertiary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            }
+        ]
+    }
+}

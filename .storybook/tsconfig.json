@@ -1,0 +1,21 @@
+{
+  "extends": "../projects/carbon-angular/tsconfig.lib.json",
+   "compilerOptions": {
+    "types": ["node"],
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+  },
+  "include": [
+    "../projects/carbon-angular/src/**/*.stories.ts",
+    "../projects/carbon-angular/src/**/*.stories.mdx",
+    "../projects/carbon-angular/src/**/*.d.ts",
+    "./preview.ts",
+    "./typings.d.ts"
+  ],
+  "exclude": [
+    "../projects/carbon-angular/src/public-api.ts",
+    "./main.ts",
+    "node_modules",
+    "dist"
+  ]
+}
