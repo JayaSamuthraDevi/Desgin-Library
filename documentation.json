@@ -11,54 +11,104 @@
     "miscellaneous": {
         "variables": [
             {
-                "name": "Danger",
+                "name": "CenteredText",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "file": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: { variant: 'danger', size: 'md', label: 'Danger' },\n}"
+                "defaultValue": "{\n  args: {\n    label: \"custom-btn\",\n    className: 'sb--btn'\n  }\n}"
             },
             {
-                "name": "Ghost",
+                "name": "Colors",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "file": "projects/carbon-angular/src/lib/components/sb-icons/sb-icons.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: { variant: 'ghost', size: 'md', label: 'Ghost' },\n}"
+                "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 1rem; align-items: center;\">\n        <sb-icon name=\"add\" size=\"lg\" color=\"red\"></sb-icon>\n        <sb-icon name=\"add\" size=\"lg\" color=\"green\"></sb-icon>\n        <sb-icon name=\"add\" size=\"lg\" color=\"blue\"></sb-icon>\n        <sb-icon name=\"add\" size=\"lg\" color=\"#ff9900\"></sb-icon>\n      </div>\n    `,\n  }),\n}"
             },
             {
-                "name": "Link",
+                "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "file": "projects/carbon-angular/src/lib/components/sb-icons/sb-icons.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: { variant: 'link', size: 'md', label: 'Link' },\n}"
+                "defaultValue": "{\n  args: {\n    name: 'add' as IconName,\n    size: 'md',\n    color: 'currentColor',\n  },\n}"
             },
             {
-                "name": "Loading",
+                "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "file": "projects/carbon-angular/src/lib/components/sb-modal/modal.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: { variant: 'primary', loading: true, label: 'Loading…' },\n}"
+                "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <app-modal\n        [isOpen]=\"isOpen\"\n        [title]=\"title\"\n        [size]=\"size\"\n        [cancelLabel]=\"cancelLabel\"\n        [confirmLabel]=\"confirmLabel\"\n        [cancelDisabled]=\"cancelDisabled\"\n        [confirmDisabled]=\"confirmDisabled\"\n        [showFooter]=\"showFooter\"\n        [showDefaultFooter]=\"showDefaultFooter\"\n        (close)=\"close($event)\"\n        (cancel)=\"cancel($event)\"\n        (confirm)=\"confirm($event)\"\n      >\n        <p>This is the body of the modal.</p>\n        <p>You can project <strong>any content</strong> here.</p>\n      </app-modal>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "Disabled",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'Disabled',\n    disabled: true,\n    variant: 'primary',\n  },\n}"
+            },
+            {
+                "name": "IconOnly",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    iconOnly: true,\n    variant: 'primary',\n    iconName: 'add',\n  },\n}"
+            },
+            {
+                "name": "IconPosition",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'Add Item',\n    variant: 'primary',\n    iconName: 'add',\n    iconPosition: 'left'\n  },\n}"
             },
             {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "file": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<CdsButton>",
-                "defaultValue": "{\n  title: 'Components/Button',\n  component: CdsButton,\n  tags: ['autodocs'],\n  argTypes: {\n    label: { control: 'text' },\n    variant: {\n      control: 'select',\n      options: ['primary', 'secondary', 'tertiary', 'ghost', 'danger', 'link'],\n    },\n    size: {\n      control: 'select',\n      options: ['sm', 'md', 'lg'],\n    },\n    disabled: { control: 'boolean' },\n    loading: { control: 'boolean' },\n  },\n  args: {\n    label: 'Button',\n    variant: 'primary',\n    size: 'md',\n    disabled: false,\n    loading: false,\n  },\n}"
+                "type": "Meta<SbButton>",
+                "defaultValue": "{\n  title: 'Carbon/Button',\n  component: SbButton,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [SbButton, SbIcon],\n    }),\n  ],\n  argTypes: {\n    variant: {\n      control: { type: 'select' },\n      options: ['primary', 'secondary', 'tertiary', 'ghost', 'danger', 'link'],\n    },\n    size: {\n      control: { type: 'select' },\n      options: ['xs', 'sm', 'md', 'lg', 'xl'],\n    },\n    iconName: {\n      control: { type: 'select' },\n      options: Object.keys(ICONS) as IconName[],\n    },\n    iconPosition: {\n      control: { type: 'select' },\n      options: ['right', 'left']\n    },\n    iconOnly: { control: 'boolean' },\n    disabled: { control: 'boolean' },\n    expressive: { control: 'boolean' },\n    width: {\n      control: { type: 'select' },\n      options: ['full', 'auto'],\n    },\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/carbon-angular/src/lib/components/sb-icons/sb-icons.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<SbIcon>",
+                "defaultValue": "{\n  title: 'Components/Icon',\n  component: SbIcon,\n  tags: ['autodocs'],\n  argTypes: {\n    name: {\n      control: { type: 'select' },\n      options: Object.keys((await import('./icons')).ICONS) as IconName[],\n    },\n    size: {\n      control: { type: 'select' },\n      options: ['sm', 'md', 'lg', 'xl', 2, 3, 4], // string presets + numeric\n    },\n    color: {\n      control: 'color',\n    },\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/carbon-angular/src/lib/components/sb-modal/modal.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ModalComponent>",
+                "defaultValue": "{\n  title: 'Components/Modal',\n  component: ModalComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    isOpen: { control: 'boolean' },\n    title: { control: 'text' },\n    size: {\n      control: 'select',\n      options: ['sm', 'md', 'lg', 'xl'],\n    },\n    cancelLabel: { control: 'text' },\n    confirmLabel: { control: 'text' },\n    cancelDisabled: { control: 'boolean' },\n    confirmDisabled: { control: 'boolean' },\n    showFooter: { control: 'boolean' },\n    showDefaultFooter: { control: 'boolean' },\n    close: { action: 'close' },\n    cancel: { action: 'cancel' },\n    confirm: { action: 'confirm' },\n  },\n  args: {\n    isOpen: true,\n    title: 'Example Modal',\n    size: 'md',\n    cancelLabel: 'Cancel',\n    confirmLabel: 'Confirm',\n    cancelDisabled: false,\n    confirmDisabled: false,\n    showFooter: true,\n    showDefaultFooter: true,\n  },\n}"
             },
             {
                 "name": "preview",
@@ -68,37 +118,67 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Preview",
-                "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: '^on[A-Z].*' },\n    docs: { autodocs: true },\n    controls: {\n      expanded: true,\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n  decorators: [\n    applicationConfig({\n      providers: [\n        provideZonelessChangeDetection(), // zoneless mode\n      ],\n    }),\n  ]\n}"
+                "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: '^on[A-Z].*' },\n    docs: { autodocs: true },\n    controls: {\n      expanded: true,\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n  decorators: [\n    applicationConfig({\n      providers: [\n        provideZonelessChangeDetection(), // zoneless mode\n      ],\n    }),\n    withThemeByDataAttribute({\n      themes: {\n        White: 'white',\n        G10: 'g10',\n        G90: 'g90',\n        G100: 'g100',\n        Custom1: 'custom-1',\n        Custom2: 'custom-2',\n        Custom3: 'custom-3',\n      },\n      defaultTheme: 'White',\n      attributeName: 'data-carbon-theme',\n      parentSelector: 'html',\n    }),\n  ]\n}"
             },
             {
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "file": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: { variant: 'primary', size: 'md', label: 'Primary' },\n}"
+                "defaultValue": "{\n  args: {\n    label: 'Primary Button',\n    variant: 'primary',\n    size: 'md',\n  },\n}"
             },
             {
-                "name": "Secondary",
+                "name": "Sizes",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "file": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: { variant: 'secondary', size: 'md', label: 'Secondary' },\n}"
+                "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 1rem;\">\n        <sb-button label=\"Small\" size=\"sm\" variant=\"primary\"></sb-button>\n        <sb-button label=\"Medium\" size=\"md\" variant=\"primary\"></sb-button>\n        <sb-button label=\"Large\" size=\"lg\" variant=\"primary\"></sb-button>\n      </div>\n    `,\n  }),\n}"
             },
             {
-                "name": "Tertiary",
+                "name": "Sizes",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "file": "projects/carbon-angular/src/lib/components/sb-icons/sb-icons.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: { variant: 'tertiary', size: 'md', label: 'Tertiary' },\n}"
+                "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 1rem; align-items: center;\">\n        <sb-icon name=\"add\" size=\"sm\"></sb-icon>\n        <sb-icon name=\"add\" size=\"md\"></sb-icon>\n        <sb-icon name=\"add\" size=\"lg\"></sb-icon>\n        <sb-icon name=\"add\" size=\"xl\"></sb-icon>\n        <sb-icon name=\"add\" [size]=\"2\"></sb-icon>\n      </div>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "ThemedButtons",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 1rem;\">\n      <div data-carbon-theme=\"white\">\n          <sb-button label=\"Carbon Default\" variant=\"primary\"></sb-button>\n        </div>\n        <div data-carbon-theme=\"custom-1\">\n          <sb-button label=\"Fully Curved\" variant=\"primary\"></sb-button>\n        </div>\n        <div data-carbon-theme=\"custom-2\">\n          <sb-button label=\"Light Curves\" variant=\"primary\"></sb-button>\n        </div>\n        <div data-carbon-theme=\"custom-3\">\n          <sb-button label=\"Text Centered with Light Curved\" variant=\"primary\"></sb-button>\n        </div>\n      </div>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "WithCustomFooter",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/carbon-angular/src/lib/components/sb-modal/modal.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <app-modal\n        [isOpen]=\"isOpen\"\n        [title]=\"title\"\n        [size]=\"size\"\n        [showFooter]=\"true\"\n        [showDefaultFooter]=\"false\"\n        (close)=\"close($event)\"\n        (cancel)=\"cancel($event)\"\n        (confirm)=\"confirm($event)\"\n      >\n        <p>This is the modal body with custom footer.</p>\n\n        <div footer>\n          <button class=\"cds--btn cds--btn--secondary\" (click)=\"cancel($event)\">Custom Cancel</button>\n          <button class=\"cds--btn cds--btn--primary\" (click)=\"confirm($event)\">Custom Confirm</button>\n        </div>\n      </app-modal>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "WithIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'Add Item',\n    variant: 'primary',\n    iconName: 'add',\n  },\n}"
             }
         ],
         "functions": [],
@@ -107,8 +187,30 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<CdsButton>",
-                "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "rawtype": "StoryObj<SbButton>",
+                "file": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<SbIcon>",
+                "file": "projects/carbon-angular/src/lib/components/sb-icons/sb-icons.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ModalComponent>",
+                "file": "projects/carbon-angular/src/lib/components/sb-modal/modal.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -117,86 +219,170 @@
         ],
         "enumerations": [],
         "groupedVariables": {
-            "projects/carbon-angular/src/lib/components/button/button.stories.ts": [
+            "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts": [
                 {
-                    "name": "Danger",
+                    "name": "CenteredText",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                    "file": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: { variant: 'danger', size: 'md', label: 'Danger' },\n}"
+                    "defaultValue": "{\n  args: {\n    label: \"custom-btn\",\n    className: 'sb--btn'\n  }\n}"
                 },
                 {
-                    "name": "Ghost",
+                    "name": "Disabled",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                    "file": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: { variant: 'ghost', size: 'md', label: 'Ghost' },\n}"
+                    "defaultValue": "{\n  args: {\n    label: 'Disabled',\n    disabled: true,\n    variant: 'primary',\n  },\n}"
                 },
                 {
-                    "name": "Link",
+                    "name": "IconOnly",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                    "file": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: { variant: 'link', size: 'md', label: 'Link' },\n}"
+                    "defaultValue": "{\n  args: {\n    iconOnly: true,\n    variant: 'primary',\n    iconName: 'add',\n  },\n}"
                 },
                 {
-                    "name": "Loading",
+                    "name": "IconPosition",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                    "file": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: { variant: 'primary', loading: true, label: 'Loading…' },\n}"
+                    "defaultValue": "{\n  args: {\n    label: 'Add Item',\n    variant: 'primary',\n    iconName: 'add',\n    iconPosition: 'left'\n  },\n}"
                 },
                 {
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                    "file": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Meta<CdsButton>",
-                    "defaultValue": "{\n  title: 'Components/Button',\n  component: CdsButton,\n  tags: ['autodocs'],\n  argTypes: {\n    label: { control: 'text' },\n    variant: {\n      control: 'select',\n      options: ['primary', 'secondary', 'tertiary', 'ghost', 'danger', 'link'],\n    },\n    size: {\n      control: 'select',\n      options: ['sm', 'md', 'lg'],\n    },\n    disabled: { control: 'boolean' },\n    loading: { control: 'boolean' },\n  },\n  args: {\n    label: 'Button',\n    variant: 'primary',\n    size: 'md',\n    disabled: false,\n    loading: false,\n  },\n}"
+                    "type": "Meta<SbButton>",
+                    "defaultValue": "{\n  title: 'Carbon/Button',\n  component: SbButton,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [SbButton, SbIcon],\n    }),\n  ],\n  argTypes: {\n    variant: {\n      control: { type: 'select' },\n      options: ['primary', 'secondary', 'tertiary', 'ghost', 'danger', 'link'],\n    },\n    size: {\n      control: { type: 'select' },\n      options: ['xs', 'sm', 'md', 'lg', 'xl'],\n    },\n    iconName: {\n      control: { type: 'select' },\n      options: Object.keys(ICONS) as IconName[],\n    },\n    iconPosition: {\n      control: { type: 'select' },\n      options: ['right', 'left']\n    },\n    iconOnly: { control: 'boolean' },\n    disabled: { control: 'boolean' },\n    expressive: { control: 'boolean' },\n    width: {\n      control: { type: 'select' },\n      options: ['full', 'auto'],\n    },\n  },\n}"
                 },
                 {
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                    "file": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: { variant: 'primary', size: 'md', label: 'Primary' },\n}"
+                    "defaultValue": "{\n  args: {\n    label: 'Primary Button',\n    variant: 'primary',\n    size: 'md',\n  },\n}"
                 },
                 {
-                    "name": "Secondary",
+                    "name": "Sizes",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                    "file": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: { variant: 'secondary', size: 'md', label: 'Secondary' },\n}"
+                    "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 1rem;\">\n        <sb-button label=\"Small\" size=\"sm\" variant=\"primary\"></sb-button>\n        <sb-button label=\"Medium\" size=\"md\" variant=\"primary\"></sb-button>\n        <sb-button label=\"Large\" size=\"lg\" variant=\"primary\"></sb-button>\n      </div>\n    `,\n  }),\n}"
                 },
                 {
-                    "name": "Tertiary",
+                    "name": "ThemedButtons",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                    "file": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: { variant: 'tertiary', size: 'md', label: 'Tertiary' },\n}"
+                    "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 1rem;\">\n      <div data-carbon-theme=\"white\">\n          <sb-button label=\"Carbon Default\" variant=\"primary\"></sb-button>\n        </div>\n        <div data-carbon-theme=\"custom-1\">\n          <sb-button label=\"Fully Curved\" variant=\"primary\"></sb-button>\n        </div>\n        <div data-carbon-theme=\"custom-2\">\n          <sb-button label=\"Light Curves\" variant=\"primary\"></sb-button>\n        </div>\n        <div data-carbon-theme=\"custom-3\">\n          <sb-button label=\"Text Centered with Light Curved\" variant=\"primary\"></sb-button>\n        </div>\n      </div>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "WithIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    label: 'Add Item',\n    variant: 'primary',\n    iconName: 'add',\n  },\n}"
+                }
+            ],
+            "projects/carbon-angular/src/lib/components/sb-icons/sb-icons.stories.ts": [
+                {
+                    "name": "Colors",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/carbon-angular/src/lib/components/sb-icons/sb-icons.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 1rem; align-items: center;\">\n        <sb-icon name=\"add\" size=\"lg\" color=\"red\"></sb-icon>\n        <sb-icon name=\"add\" size=\"lg\" color=\"green\"></sb-icon>\n        <sb-icon name=\"add\" size=\"lg\" color=\"blue\"></sb-icon>\n        <sb-icon name=\"add\" size=\"lg\" color=\"#ff9900\"></sb-icon>\n      </div>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/carbon-angular/src/lib/components/sb-icons/sb-icons.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    name: 'add' as IconName,\n    size: 'md',\n    color: 'currentColor',\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/carbon-angular/src/lib/components/sb-icons/sb-icons.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<SbIcon>",
+                    "defaultValue": "{\n  title: 'Components/Icon',\n  component: SbIcon,\n  tags: ['autodocs'],\n  argTypes: {\n    name: {\n      control: { type: 'select' },\n      options: Object.keys((await import('./icons')).ICONS) as IconName[],\n    },\n    size: {\n      control: { type: 'select' },\n      options: ['sm', 'md', 'lg', 'xl', 2, 3, 4], // string presets + numeric\n    },\n    color: {\n      control: 'color',\n    },\n  },\n}"
+                },
+                {
+                    "name": "Sizes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/carbon-angular/src/lib/components/sb-icons/sb-icons.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 1rem; align-items: center;\">\n        <sb-icon name=\"add\" size=\"sm\"></sb-icon>\n        <sb-icon name=\"add\" size=\"md\"></sb-icon>\n        <sb-icon name=\"add\" size=\"lg\"></sb-icon>\n        <sb-icon name=\"add\" size=\"xl\"></sb-icon>\n        <sb-icon name=\"add\" [size]=\"2\"></sb-icon>\n      </div>\n    `,\n  }),\n}"
+                }
+            ],
+            "projects/carbon-angular/src/lib/components/sb-modal/modal.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/carbon-angular/src/lib/components/sb-modal/modal.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <app-modal\n        [isOpen]=\"isOpen\"\n        [title]=\"title\"\n        [size]=\"size\"\n        [cancelLabel]=\"cancelLabel\"\n        [confirmLabel]=\"confirmLabel\"\n        [cancelDisabled]=\"cancelDisabled\"\n        [confirmDisabled]=\"confirmDisabled\"\n        [showFooter]=\"showFooter\"\n        [showDefaultFooter]=\"showDefaultFooter\"\n        (close)=\"close($event)\"\n        (cancel)=\"cancel($event)\"\n        (confirm)=\"confirm($event)\"\n      >\n        <p>This is the body of the modal.</p>\n        <p>You can project <strong>any content</strong> here.</p>\n      </app-modal>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/carbon-angular/src/lib/components/sb-modal/modal.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ModalComponent>",
+                    "defaultValue": "{\n  title: 'Components/Modal',\n  component: ModalComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    isOpen: { control: 'boolean' },\n    title: { control: 'text' },\n    size: {\n      control: 'select',\n      options: ['sm', 'md', 'lg', 'xl'],\n    },\n    cancelLabel: { control: 'text' },\n    confirmLabel: { control: 'text' },\n    cancelDisabled: { control: 'boolean' },\n    confirmDisabled: { control: 'boolean' },\n    showFooter: { control: 'boolean' },\n    showDefaultFooter: { control: 'boolean' },\n    close: { action: 'close' },\n    cancel: { action: 'cancel' },\n    confirm: { action: 'confirm' },\n  },\n  args: {\n    isOpen: true,\n    title: 'Example Modal',\n    size: 'md',\n    cancelLabel: 'Cancel',\n    confirmLabel: 'Confirm',\n    cancelDisabled: false,\n    confirmDisabled: false,\n    showFooter: true,\n    showDefaultFooter: true,\n  },\n}"
+                },
+                {
+                    "name": "WithCustomFooter",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/carbon-angular/src/lib/components/sb-modal/modal.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <app-modal\n        [isOpen]=\"isOpen\"\n        [title]=\"title\"\n        [size]=\"size\"\n        [showFooter]=\"true\"\n        [showDefaultFooter]=\"false\"\n        (close)=\"close($event)\"\n        (cancel)=\"cancel($event)\"\n        (confirm)=\"confirm($event)\"\n      >\n        <p>This is the modal body with custom footer.</p>\n\n        <div footer>\n          <button class=\"cds--btn cds--btn--secondary\" (click)=\"cancel($event)\">Custom Cancel</button>\n          <button class=\"cds--btn cds--btn--primary\" (click)=\"confirm($event)\">Custom Confirm</button>\n        </div>\n      </app-modal>\n    `,\n  }),\n}"
                 }
             ],
             ".storybook/preview.ts": [
@@ -208,20 +394,46 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Preview",
-                    "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: '^on[A-Z].*' },\n    docs: { autodocs: true },\n    controls: {\n      expanded: true,\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n  decorators: [\n    applicationConfig({\n      providers: [\n        provideZonelessChangeDetection(), // zoneless mode\n      ],\n    }),\n  ]\n}"
+                    "defaultValue": "{\n  parameters: {\n    actions: { argTypesRegex: '^on[A-Z].*' },\n    docs: { autodocs: true },\n    controls: {\n      expanded: true,\n      matchers: {\n        color: /(background|color)$/i,\n        date: /Date$/i,\n      },\n    },\n  },\n  decorators: [\n    applicationConfig({\n      providers: [\n        provideZonelessChangeDetection(), // zoneless mode\n      ],\n    }),\n    withThemeByDataAttribute({\n      themes: {\n        White: 'white',\n        G10: 'g10',\n        G90: 'g90',\n        G100: 'g100',\n        Custom1: 'custom-1',\n        Custom2: 'custom-2',\n        Custom3: 'custom-3',\n      },\n      defaultTheme: 'White',\n      attributeName: 'data-carbon-theme',\n      parentSelector: 'html',\n    }),\n  ]\n}"
                 }
             ]
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
-            "projects/carbon-angular/src/lib/components/button/button.stories.ts": [
+            "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<CdsButton>",
-                    "file": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                    "rawtype": "StoryObj<SbButton>",
+                    "file": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/carbon-angular/src/lib/components/sb-icons/sb-icons.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<SbIcon>",
+                    "file": "projects/carbon-angular/src/lib/components/sb-icons/sb-icons.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/carbon-angular/src/lib/components/sb-modal/modal.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ModalComponent>",
+                    "file": "projects/carbon-angular/src/lib/components/sb-modal/modal.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -246,47 +458,47 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "filePath": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Danger",
+                "name": "CenteredText",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "filePath": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Ghost",
+                "name": "Disabled",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "filePath": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Link",
+                "name": "IconOnly",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "filePath": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Loading",
+                "name": "IconPosition",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "filePath": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -296,7 +508,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "filePath": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -306,27 +518,127 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "filePath": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Secondary",
+                "name": "Sizes",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "filePath": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Tertiary",
+                "name": "ThemedButtons",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "projects/carbon-angular/src/lib/components/button/button.stories.ts",
+                "filePath": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/sb-icons/sb-icons.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Colors",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/sb-icons/sb-icons.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/sb-icons/sb-icons.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/sb-icons/sb-icons.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Sizes",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/sb-icons/sb-icons.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/sb-modal/modal.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/sb-modal/modal.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/sb-modal/modal.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithCustomFooter",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/sb-modal/modal.stories.ts",
                 "type": "type alias",
                 "linktype": "miscellaneous",
                 "linksubtype": "typealias",

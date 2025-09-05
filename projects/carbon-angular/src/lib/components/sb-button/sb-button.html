@@ -1,0 +1,18 @@
+<button type="button" [disabled]="disabled()" [attr.aria-label]="ariaLabel() || null"
+  [attr.aria-expanded]="ariaExpanded() || null" [class]="classes()" role="button" [style.width]="width()">
+  <!-- Icon on the left
+  @if (iconName() && iconPosition() === 'left') {
+  <sb-icon [name]="iconName()"></sb-icon>
+  }
+   -->
+  <!-- Label -->
+  @if (!iconOnly()) {
+  <span class="cds--btn__label">{{ label() }}</span>
+  }
+
+  <!-- Icon on the right -->
+  <!-- @if (iconName() && (iconPosition() === 'right' || !iconPosition())) { -->
+  @if (iconName()) {
+  <sb-icon [name]="iconName()!"></sb-icon>
+  }
+</button>

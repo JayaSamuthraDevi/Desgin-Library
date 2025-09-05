@@ -1,0 +1,33 @@
+<div class="cds--modal-container" [ngClass]="'cds--modal-' + size()" (click)="onBackdropClick($event)">
+  <!-- Header -->
+  <div class="cds--modal-header">
+    <p class="cds--modal-header__heading" [id]="modalTitleId">{{ title() }}</p>
+    <button type="button" class="cds--modal-close" [attr.aria-label]="closeButtonLabel()" (click)="closeModal()">
+      <sb-icon [name]="'close'" alt="close icon" />
+    </button>
+  </div>
+
+  <!-- Content -->
+  <div class="cds--modal-content" [id]="modalContentId">
+    <ng-content></ng-content>
+  </div>
+
+  <!-- Footer -->
+  @if (showFooter() && !passiveModal()) {
+  <div class="cds--modal-footer" [ngClass]="{ 'cds--modal--danger': danger() }">
+    <ng-content select="[footer]"></ng-content>
+
+    @if (showDefaultFooter()) {
+    <!-- <button class="cds--btn cds--btn--secondary" [disabled]="cancelDisabled()" (click)="cancel.emit()">
+      {{ cancelLabel() }}
+    </button> -->
+    <!-- <button class="cds--btn cds--btn--primary" [disabled]="confirmDisabled()" (click)="confirm.emit()">
+      {{ confirmLabel() }}
+    </button> -->
+    <sb-button label="{{ cancelLabel() }}" variant="secondary" [disabled]="cancelDisabled()" (click)="cancel.emit()" size="sm"
+       />
+    <sb-button label="{{ confirmLabel() }}" [disabled]="confirmDisabled()" (click)="confirm.emit()" size="sm" variant="primary"  /> 
+    }
+  </div>
+  }
+</div>

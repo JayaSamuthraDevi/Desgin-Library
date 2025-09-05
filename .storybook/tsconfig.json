@@ -10,7 +10,8 @@
     "../projects/carbon-angular/src/**/*.stories.mdx",
     "../projects/carbon-angular/src/**/*.d.ts",
     "./preview.ts",
-    "./typings.d.ts"
+    "./typings.d.ts",
+    "./custom-theme.scss"
   ],
   "exclude": [
     "../projects/carbon-angular/src/public-api.ts",

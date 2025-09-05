@@ -11,7 +11,9 @@ const config: StorybookConfig = {
   stories: [
     '../projects/carbon-angular/src/lib/**/*.stories.@(ts|tsx|js|jsx|mjs|cjs|mdx)',
   ],
-  addons: ['@storybook/addon-docs'],
+  addons: ['@storybook/addon-docs',
+    '@storybook/addon-themes'
+  ],
 };
 
 export default config;

@@ -1,0 +1,28 @@
+.cds--btn {
+  border-radius: var(--sb--button-corner-radius);
+  width: 100%;
+}
+
+.cds--btn .cds--btn__icon {
+  position: relative;
+  inset: 1px;
+}
+
+.cds--btn.cds--btn--icon-only{
+  width: auto;
+  padding: 1rem;
+}
+
+
+// .sb--btn {
+//   padding: 0.5rem 1rem;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   gap: 1.5rem; // space between icon & text
+// }
+
+// /* Special rule: ghost variant should not have spacing */
+// .cds--btn--ghost.sb--btn {
+//   gap: 0; 
+// }
