@@ -1,0 +1,22 @@
+<div class="theme-picker">
+  <div class="color-input">
+    <label>Primary Color</label>
+    <input type="color" [value]="colorThemeService.primaryColor"
+      (input)="colorThemeService.updatePrimary($any($event.target).value)" />
+  </div>
+
+  <div class="color-input">
+    <label>Secondary Color</label>
+    <input type="color" [value]="colorThemeService.secondaryColor"
+      (input)="colorThemeService.updateSecondary($any($event.target).value)" />
+  </div>
+</div>
+
+<div class="shade-preview">
+  <div class="shade-box" style="background-color: var(--cds-interactive-01)">Primary 01</div>
+  <div class="shade-box" style="background-color: var(--cds-interactive-02)">Primary 02</div>
+  <div class="shade-box" style="background-color: var(--cds-interactive-03)">Primary 03</div>
+  <div class="shade-box" style="background-color: var(--cds-support-01)">Secondary 01</div>
+  <div class="shade-box" style="background-color: var(--cds-support-02)">Secondary 02</div>
+  <div class="shade-box" style="background-color: var(--cds-support-03)">Secondary 03</div>
+</div>

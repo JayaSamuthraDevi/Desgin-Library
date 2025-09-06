@@ -1,0 +1,52 @@
+// src/styles/themes/_purple.scss
+@use 'sass:map';
+@use '@carbon/styles/scss/theme' as *;
+@use '@carbon/styles/scss/themes' as *;
+
+$purple-10: #f5e6ff;
+$purple-20: #e0b3ff;
+$purple-30: #cc80ff;
+$purple-40: #b84dff;
+$purple-50: #a31aff;
+$purple-60: #8000e6;
+$purple-70: #6600b3;
+$purple-80: #4c0080;
+$purple-90: #33004d;
+$purple-100: #1a001a;
+
+$purple: map.merge($white,
+    (background: $purple-10,
+      background-inverse: $purple-100,
+      background-hover: $purple-20,
+      layer: $purple-20,
+      // layer-hover: $purple-30,
+      // layer-active: $purple-40,
+
+      // text-primary: $purple-90,
+      // text-secondary: $purple-70,
+      // text-inverse: $purple-10,
+
+      // link-01: $purple-60, // ✅ correct token name
+
+      // // interactive-01: $purple-60, // primary button
+      // // interactive-02: $purple-70, // secondary button
+      // // interactive-03: $purple-80, // tertiary
+      // // interactive-04: $purple-100,
+
+      // border-subtle: $purple-20,
+      // border-strong: $purple-60,
+      // focus: $purple-50,
+
+      // support-success: #6fdc8c,
+      // support-error: #ff8389,
+      // support-warning: #fdd13a,
+      // support-info: $purple-60,
+    ));
+
+[data-carbon-theme='purple'] {
+  @include theme($purple);
+
+  // & {
+  //   --cds-interactive-01: pink; // buttons should now be pink
+  // }
+}

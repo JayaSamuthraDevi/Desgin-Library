@@ -1,0 +1,13 @@
+@use 'sass:color';
+
+// Function to generate light/dark variants dynamically
+@function generate-shade($base, $percent) {
+  @return color.scale($base, $lightness: $percent);
+}
+
+// Example: primary base colors
+$primary-colors: (
+  // "purple": #8a3ffc,
+  "blue": #0f62fe,
+  "green": #24a148
+);

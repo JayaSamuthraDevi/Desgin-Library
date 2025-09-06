@@ -1,0 +1,36 @@
+@use 'sass:map';
+@use 'sass:color';
+@use '@carbon/themes' as themes;
+@use './colors' as appColors;
+
+
+// Generate a theme dynamically from a base color
+@mixin dynamic-theme($color-name) {
+  $base: map.get(appColors.$primary-colors, $color-name);
+
+  $theme-map: (
+    interactive-01: $base,
+    interactive-02: color.scale($base, $lightness: 20%),
+    // lighter
+    interactive-03: color.scale($base, $lightness: -20%),
+    // darker
+    ui-background: color.scale($base, $lightness: 90%),
+    text-primary: #1da5af,
+    text-secondary: #555555
+  );
+
+@include themes.theme($theme-map);
+}
+
+// Assign themes to data attributes
+// [data-carbon-theme='purple'] {
+//   @include dynamic-theme("purple");
+// }
+
+[data-carbon-theme='blue'] {
+  @include dynamic-theme("blue");
+}
+
+[data-carbon-theme='green'] {
+  @include dynamic-theme("green");
+}

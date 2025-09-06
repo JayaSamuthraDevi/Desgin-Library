@@ -1,4 +1,4 @@
-import { CarbonTheme } from './carbon-theme.service';
+import { CarbonTheme } from '../services/carbon-theme.service';
 
 /**
  * Sets the initial theme on the HTML element.

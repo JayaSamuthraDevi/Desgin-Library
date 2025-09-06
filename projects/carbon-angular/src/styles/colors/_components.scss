@@ -1,0 +1,20 @@
+@use 'sass:color';
+@use './colors' as appColors;
+
+@each $name, $base in appColors.$primary-colors {
+  [data-carbon-theme='#{$name}'] {
+    .btn-primary {
+      background-color: $base;
+      border-radius: 1.5rem;
+
+      &:hover {
+        background-color: color.scale($base, $lightness: -15%);
+      }
+    }
+
+    .header {
+      background-color: color.scale($base, $lightness: -20%);
+      color: #fff;
+    }
+  }
+}

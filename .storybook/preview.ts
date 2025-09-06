@@ -36,6 +36,9 @@ const preview: Preview = {
         Custom1: 'custom-1',
         Custom2: 'custom-2',
         Custom3: 'custom-3',
+        Blue:'blue',
+        Purple:'purple',
+        Green: 'green'
       },
       defaultTheme: 'White',
       attributeName: 'data-carbon-theme',

@@ -1,0 +1,40 @@
+.theme-picker {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+
+  .color-input {
+    display: flex;
+    flex-direction: column;
+
+    label {
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    input[type='color'] {
+      width: 60px;
+      height: 32px;
+      border: none;
+      cursor: pointer;
+    }
+  }
+}
+
+.shade-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  .shade-box {
+    flex: 0 0 120px;
+    padding: 1rem;
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 4px;
+  }
+}

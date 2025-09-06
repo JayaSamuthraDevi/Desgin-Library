@@ -1,0 +1,5 @@
+<div class="cds--form-item">
+  <label class="cds--label">{{ label() }}</label>
+  <input class="cds--text-input" [type]="type()" [placeholder]="placeholder()" [value]="value()"
+    (input)="onChange($event)" />
+</div>

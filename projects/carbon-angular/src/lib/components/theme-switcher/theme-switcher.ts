@@ -1,6 +1,6 @@
 // src/lib/components/theme-switcher/theme-switcher.component.ts
 import { Component } from '@angular/core';
-import { CarbonThemeService, CarbonTheme } from '../../sb-themes/carbon-theme.service';
+import { CarbonThemeService, CarbonTheme } from '../../services/carbon-theme.service';
 
 @Component({
   selector: 'theme-switcher',
@@ -11,7 +11,7 @@ import { CarbonThemeService, CarbonTheme } from '../../sb-themes/carbon-theme.se
   `,
 })
 export class ThemeSwitcherComponent {
-  themes: CarbonTheme[] = ['white', 'g10', 'g90', 'g100', 'custom-1' ,'custom-2'];
+  themes: CarbonTheme[] = ['white', 'g10', 'g90', 'g100', 'custom-1', 'custom-2', 'custom-3','blue','purple','green']
   currentTheme: CarbonTheme;
 
   constructor(private themeService: CarbonThemeService) {

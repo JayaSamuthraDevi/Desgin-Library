@@ -1,36 +1,49 @@
-@use '@carbon/themes/scss/themes' as *;
-@use '@carbon/themes';
+@use 'sass:map';
+@use '@carbon/styles/scss/theme' as *; // ✅ use new theme API
+@use '@carbon/styles/scss/themes' as *; // ✅ built-in themes (white, g10, g90, g100)
+@use '../../styles/colors/purple' as *;
 
-// Default theme (white)
+/* Default theme (white) */
 :root {
-  @include themes.theme($white);
+  @include theme($white);
 }
 
 /* Built-in Carbon themes */
 [data-carbon-theme='g10'] {
-  @include themes.theme($g10);
+  @include theme($g10);
 }
 
 [data-carbon-theme='g90'] {
-  @include themes.theme($g90);
+  @include theme($g90);
 }
 
 [data-carbon-theme='g100'] {
-  @include themes.theme($g100);
-  --sb--button-corner-radius: 4px;
+  @include theme($g100);
+
+  & {
+    --sb--button-corner-radius: 4px;
+  }
 }
 
 /* Custom-1 theme → large rounded corners */
 [data-carbon-theme='custom-1'] {
-  @include themes.theme($white);
-  --sb--button-corner-radius: 2rem;
+  @include theme($g90); // base tokens
+
+  & {
+    --sb--button-corner-radius: 2rem;
+    --sb--text-corner-radius: 2rem;
+  }
 }
 
 /* Custom-2 theme → small rounded corners + centered text */
 [data-carbon-theme='custom-2'] {
-  @include themes.theme($white);
-  --sb--button-corner-radius: 4px;
-  /* If you also want text centered in all buttons */
+  @include theme($g90); // base tokens
+
+  & {
+    --sb--button-corner-radius: 4px;
+    --sb--text-corner-radius: 12px;
+  }
+
   .sb--btn {
     padding: 0.5rem 1rem;
     display: flex;
@@ -39,25 +52,23 @@
     gap: 1.5rem; // space between icon & text
   }
 
-  /* Special rule: ghost variant should not have spacing */
   .cds--btn--ghost.sb--btn {
-    gap: 0; 
+    gap: 0;
   }
 }
 
 /* Custom-3 theme → text + icon centered */
 [data-carbon-theme='custom-3'] {
-  @include themes.theme($white);
+  @include theme($white); // base tokens
 
   .sb--btn {
     padding: 0.5rem 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 1.5rem; // space between icon & text
+    gap: 1.5rem;
   }
 
-  /* Special rule: ghost variant should not have spacing */
   .cds--btn--ghost.sb--btn {
     gap: 0;
   }

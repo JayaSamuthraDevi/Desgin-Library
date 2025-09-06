@@ -1,0 +1,12 @@
+.cds--header {
+  background: var(--cds-interactive-01);
+  color: var(--cds-text-primary);
+  padding: 0.75rem 1rem;
+
+  .cds--header__name {
+    font-weight: 600;
+    font-size: 1.125rem;
+    color: var(--cds-text-primary);
+    text-decoration: none;
+  }
+}
