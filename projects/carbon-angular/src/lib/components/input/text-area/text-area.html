@@ -1,0 +1,48 @@
+@if(skeleton()) {
+<span class="cds--label cds--skeleton"></span>
+<div class="cds--text-input cds--skeleton"></div>
+} @else {
+
+@if(label()) {
+<div class="cds--text-area__label-wrapper">
+  <label [for]="labelInputID" class="cds--label" [ngClass]="{'cds--label--disabled': disabled()}">
+    {{ label() }}
+  </label>
+</div>
+}
+
+<div class="cds--text-area__wrapper" [attr.data-invalid]="invalid() ? true : null">
+
+  <textarea [value]="value()" (input)="setValue($any($event.target).value)" (blur)="markAsTouched()"
+    [placeholder]="placeholder()" [disabled]="disabled()" [class.cds--text-area]="true"
+    [class.cds--text-area--sm]="size() === 'sm'" [class.cds--text-area--md]="size() === 'md'"
+    [class.cds--text-area--lg]="size() === 'lg'" [class.cds--text-area--fluid]="fluid()"
+    [class.cds--text-area--light]="lightTheme()" [class.cds--skeleton]="skeleton()"></textarea>
+
+  <!-- Invalid / warning icons -->
+  @if(invalid() && !warn()) {
+  <svg cdsIcon="warning--filled" size="16" class="cds--text-area__invalid-icon"></svg>
+  }
+  @if(!invalid() && warn()) {
+  <svg cdsIcon="warning--alt--filled" size="16"
+    class="cds--text-area__invalid-icon cds--text-area__invalid-icon--warning"></svg>
+  }
+</div>
+
+<!-- Helper text -->
+@if(helperText() && !invalid() && !warn()) {
+<div class="cds--form__helper-text" [ngClass]="{'cds--form__helper-text--disabled': disabled()}">
+  {{ helperText() }}
+</div>
+}
+
+<!-- Invalid message -->
+@if(invalid()) {
+<div class="cds--form-requirement">{{ invalidText() }}</div>
+}
+
+<!-- Warning message -->
+@if(!invalid() && warn()) {
+<div class="cds--form-requirement cds--form-requirement--warning">{{ warnText() }}</div>
+}
+}

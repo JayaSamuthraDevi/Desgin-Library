@@ -1,14 +1,14 @@
 import { Meta, StoryObj, moduleMetadata } from '@storybook/angular';
 import { ColorThemeComponent } from './sb-color-theme';
-import { InputComponent } from '../../components/sb-input/sb-input';
-import { SbButton } from '../../components/sb-button/sb-button';
-import { HeaderComponent } from '../../components/sb-header/sb-header';
+import { SbInputComponent } from '../sb-input/sb-input';
+import { SbButton } from '../sb-button/sb-button';
+import { HeaderComponent } from '../sb-header/sb-header';
 
 export default {
   title: 'Demo/ColorTheme',
   decorators: [
     moduleMetadata({
-      imports: [ColorThemeComponent, HeaderComponent, InputComponent, SbButton],
+      imports: [ColorThemeComponent, HeaderComponent, SbInputComponent, SbButton],
     }),
   ],
 } as Meta;
@@ -27,8 +27,8 @@ export const Default: Story = {
 
         <!-- Form -->
         <div style="margin-top: 1.5rem; max-width: 400px;">
-          <carbon-input label="Username" placeholder="Enter username"></carbon-input>
-          <carbon-input label="Password" type="password" placeholder="Enter password"></carbon-input>
+          <sb-input label="Username" placeholder="Enter username"></sb-input>
+          <sb-input label="Password" type="password" placeholder="Enter password"></sb-input>
         </div>
 
         <!-- Buttons -->

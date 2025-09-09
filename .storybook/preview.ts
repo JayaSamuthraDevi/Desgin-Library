@@ -35,10 +35,7 @@ const preview: Preview = {
         G100: 'g100',
         Custom1: 'custom-1',
         Custom2: 'custom-2',
-        Custom3: 'custom-3',
-        Blue:'blue',
-        Purple:'purple',
-        Green: 'green'
+        Custom3: 'custom-3'
       },
       defaultTheme: 'White',
       attributeName: 'data-carbon-theme',

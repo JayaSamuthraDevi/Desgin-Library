@@ -1,5 +1,25 @@
 <div class="cds--form-item">
+  @if (label()){
   <label class="cds--label">{{ label() }}</label>
-  <input class="cds--text-input" [type]="type()" [placeholder]="placeholder()" [value]="value()"
-    (input)="onChange($event)" />
+  }
+  <div class="cds--text-input__field-outer-wrapper">
+  <div class="cds--text-input__field-wrapper">
+    <input class="cds--text-input {{type()===password ? cds--password-input :''}}" [type]="effectiveType()" [placeholder]="placeholder()" [ngModel]="value()"
+      (ngModelChange)="value.set($event)" (input)="onInput($event)" />
+
+    <!-- Password toggle -->
+    @if(type() === 'password'){
+
+    <sb-icon class=" cds--text-input--password__visibility__toggle" (click)="togglePassword()" [name]="showPassword() ? 'hide' : 'view'"
+      size="md"></sb-icon>
+    }
+  </div>
+
+  @if(errorMessage){
+  <div class="cds--form-requirement">
+    {{ errorMessage }}
+  </div>
+  }
+  </div>
+
 </div>

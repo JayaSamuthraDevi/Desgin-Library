@@ -1,0 +1,16 @@
+{
+  "color": {
+    "interactive-primary": { "value": "{foundation.color.primary}" },
+    "interactive-secondary": { "value": "{foundation.color.secondary}" },
+    "interactive-accent": { "value": "{foundation.color.accent}" },
+    "state-error": { "value": "{foundation.color.error}" },
+    "state-warning": { "value": "{foundation.color.warning}" },
+    "state-success": { "value": "{foundation.color.success}" }
+  },
+  "typography": {
+    "heading-large": { "value": "{foundation.typography.font-size-xxl}" },
+    "heading-medium": { "value": "{foundation.typography.font-size-xl}" },
+    "body-large": { "value": "{foundation.typography.font-size-md}" },
+    "body-small": { "value": "{foundation.typography.font-size-xs}" }
+  }
+}

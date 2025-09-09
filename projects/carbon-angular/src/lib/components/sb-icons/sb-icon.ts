@@ -13,10 +13,10 @@ type IconSize = 'sm' | 'md' | 'lg' | 'xl' | number;
     <svg
       xmlns="http://www.w3.org/2000/svg"
       class="cds--btn__icon"
-      [style.width.em]="resolvedSize()"
-      [style.height.em]="resolvedSize()"
+      [style.width.rem]="resolvedSize()"
+      [style.height.rem]="resolvedSize()"
       [style.fill]="color()"
-      viewBox="0 0 32 32"
+      viewBox="0 0 16 16"
       [innerHTML]="svg()">
     </svg>
   `,

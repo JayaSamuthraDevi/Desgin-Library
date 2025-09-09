@@ -203,3 +203,20 @@ export class ColorThemeService {
     }
   }
 }
+
+
+export interface ThemeOverrides {
+  interactive?: Partial<Record<'01' | '02' | '03' | '04', string>>;
+  support?: Partial<Record<'01' | '02' | '03' | '04', string>>;
+  ui?: Partial<Record<'01' | '02' | '03' | '04' | '05' | 'background', string>>;
+  text?: Partial<Record<'primary' | 'secondary' | 'placeholder' | 'onColor', string>>;
+  button?: Partial<Record<'primary' | 'primaryHover' | 'primaryActive' | 'secondary' | 'secondaryHover' | 'secondaryActive' | 'danger' | 'dangerHover' | 'dangerActive', string>>;
+  border?: Partial<Record<'subtle00' | 'subtle01' | 'subtle02' | 'strong01', string>>;
+  misc?: Partial<Record<'focus' | 'highlight' | 'overlay', string>>;
+}
+
+export interface Theme {
+  name: string;
+  base: 'g10' | 'g90' | 'g100';
+  overrides?: ThemeOverrides;
+}
