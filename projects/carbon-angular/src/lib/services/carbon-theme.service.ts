@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { initCarbonTheme } from '../sb-themes/carbon-theme-init';
 
-export type CarbonTheme = 'white' | 'g10' | 'g90' | 'g100' | 'custom-1' | 'custom-2' | 'custom-3' | 'purple' | 'blue' | 'green';
+export type CarbonTheme = 'white' | 'g10' | 'g90' | 'g100' | 'custom-1' | 'custom-2' | 'custom-3';
 
 @Injectable({ providedIn: 'root' })
 export class CarbonThemeService {

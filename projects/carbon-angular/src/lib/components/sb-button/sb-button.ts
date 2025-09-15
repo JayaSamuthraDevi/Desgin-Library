@@ -8,27 +8,31 @@ import { IconName } from '../sb-icons/icons';
   standalone: true,
   imports: [CommonModule, SbIcon],
   changeDetection: ChangeDetectionStrategy.OnPush,
-  templateUrl:'sb-button.html',
+  templateUrl: 'sb-button.html',
   styleUrls: ['sb-button.scss'],
+  host: {
+    'role': 'button',
+    '[class.disabled]': 'disabled()',
+    '[attr.aria-disabled]': 'disabled()'
+  }
 })
 export class SbButton {
   label = input('');
   variant = input<'primary' | 'secondary' | 'tertiary' | 'ghost' | 'danger' | 'link'>('primary');
   size = input<'xs' | 'sm' | 'md' | 'lg' | 'xl'>('md');
-  width = input<'full' | 'auto' | string >('full');
+  width = input<'full' | 'auto'>('full');
   disabled = input(false);
   expressive = input(false);
-  className = input('')
+  className = input('');
 
   // Accessibility
-  
   ariaLabel = input<string | undefined>(undefined);
   ariaExpanded = input<boolean | undefined>(undefined);
 
   // Icons
   iconName = input<IconName | undefined>();
   iconOnly = input(false);
-  iconPosition = input('');
+  iconPosition = input<'left' | 'right' | ''>('');
 
   // computed signals for classes
   classes = computed(() => {
@@ -55,8 +59,8 @@ export class SbButton {
       sizeMap[this.size()],
       this.expressive() ? 'cds--btn--expressive' : '',
       this.iconOnly() ? 'cds--btn--icon-only' : '',
-      this.iconPosition()== 'left' ? 'sb--btn--icon-left' : '',
+      this.iconPosition() === 'left' ? 'sb--btn--icon-left' : '',
       this.className(),
-     ].filter(Boolean).join(' ');
+    ].filter(Boolean).join(' ');
   });
 }

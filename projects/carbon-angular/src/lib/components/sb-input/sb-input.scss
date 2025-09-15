@@ -1,7 +1,12 @@
-// .cds--text-input{
-//   border-radius:var(--sb--text-corner-radius);
-// }
 
 .cds--form-item {
   margin-bottom: 1rem;
+}
+
+.cds--text-input {
+  border-radius: var(--sb--input-corner-radius);
+  -webkit-border-radius: var(--sb--input-corner-radius);
+  -moz-border-radius: var(--sb--input-corner-radius);
+  -ms-border-radius: var(--sb--input-corner-radius);
+  -o-border-radius: var(--sb--input-corner-radius);
 }

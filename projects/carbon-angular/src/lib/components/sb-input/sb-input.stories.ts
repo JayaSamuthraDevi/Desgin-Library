@@ -14,20 +14,30 @@ const meta: Meta<SbInputComponent> = {
     }),
   ],
   argTypes: {
-    label: { control: 'text' },
+   label: { control: 'text' },
+   value: { control: 'text' },
+   type: { control: 'select', options: ['text', 'email', 'password', 'number'] },
     placeholder: { control: 'text' },
-    type: {
-      control: { type: 'select' },
-      options: ['text', 'email', 'password'],
-    },
-    value: { control: 'text' },
+    size: { control: 'select', options: ['sm', 'md', 'lg'] },
+    readonly: { control: 'boolean' },
+    disabled: { control: 'boolean' },
+    invalid: { control: 'boolean' },
+    warn: { control: 'boolean' },
+    warnText: { control: 'text' },
+    helperText: { control: 'text' },
+    fluid: { control: 'boolean' },
+    skeleton: { control: 'boolean' },
+    ariaLabel: { control: 'text' },
   },
 };
-export default meta;
 
+export default meta;
 type Story = StoryObj<SbInputComponent>;
 
-/** Default text input */
+//
+// 📖 Stories
+//
+
 export const Default: Story = {
   args: {
     label: 'Name',
@@ -36,43 +46,25 @@ export const Default: Story = {
   },
 };
 
-/** Email input */
-export const WithEmail: Story = {
-  args: {
-    label: 'Email',
-    placeholder: 'Enter your email',
-    type: 'email',
-  },
-};
-
-/** Two-way binding demo */
-export const WithTwoWayBinding: Story = {
-  render: (args) => ({
-    props: {
-      ...args,
-      username: '',
-    },
+export const Sizes: Story = {
+  render: () => ({
     template: `
-      <sb-input
-        label="Username"
-        placeholder="Enter your username"
-        [(value)]="username">
-      </sb-input>
-      <p>You typed: {{ username }}</p>
+      <sb-input label="Small" size="sm" placeholder="Small input"></sb-input>
+      <sb-input label="Medium" size="md" placeholder="Medium input"></sb-input>
+      <sb-input label="Large" size="lg" placeholder="Large input"></sb-input>
     `,
   }),
 };
 
-/** Password toggle demo */
 export const WithPasswordToggle: Story = {
   args: {
+    ...Default.args,
     label: 'Password',
     placeholder: 'Enter your password',
     type: 'password',
   },
 };
 
-/** Reactive Forms demo (avoid NG0200 circular dependency) */
 export const WithReactiveForms: Story = {
   decorators: [
     moduleMetadata({
@@ -85,20 +77,17 @@ export const WithReactiveForms: Story = {
     const form = fb.group({
       email: ['', { nonNullable: true, validators: [Validators.required, Validators.email] }],
     });
-
     return {
       props: { form },
       template: `
         <form [formGroup]="form" novalidate>
-  <sb-input
-    label="Email"
-    placeholder="Enter your email"
-    type="email"
-    formControlName="email">
-  </sb-input>
-</form>
-
-
+          <sb-input
+            label="Email"
+            placeholder="Enter your email"
+            type="email"
+            formControlName="email">
+          </sb-input>
+        </form>
         <p>Form value: {{ form.value | json }}</p>
         <p>Form valid: {{ form.valid }}</p>
       `,

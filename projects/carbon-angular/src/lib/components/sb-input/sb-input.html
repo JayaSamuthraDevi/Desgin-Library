@@ -1,25 +1,74 @@
-<div class="cds--form-item">
-  @if (label()){
-  <label class="cds--label">{{ label() }}</label>
-  }
-  <div class="cds--text-input__field-outer-wrapper">
+@if (skeleton()) {
+<span class="cds--label cds--skeleton"></span>
+<div class="cds--text-input cds--skeleton"></div>
+} @else {
+
+@if (label()) {
+  <label class="cds--label" [attr.for]="inputId">
+    {{ label() }}
+    @if (required()) {
+      <span aria-hidden="true" class="cds--input-required">*</span>
+    }
+  </label>
+}
+
+<div class="cds--text-input__field-outer-wrapper">
   <div class="cds--text-input__field-wrapper">
-    <input class="cds--text-input {{type()===password ? cds--password-input :''}}" [type]="effectiveType()" [placeholder]="placeholder()" [ngModel]="value()"
-      (ngModelChange)="value.set($event)" (input)="onInput($event)" />
+    <!-- Left icon -->
+    @if (iconName()) {
+      <sb-icon
+        class="cds--text-input__icon cds--text-input__icon--left"
+        [name]="iconName()"
+        size="md" />
+    }
+
+    <!-- Input -->
+    <input
+      class="cds--text-input effectiveType() === 'password' ? 'cds--password-input' : ''"
+      [id]="inputId"
+      [type]="effectiveType()"
+      [placeholder]="placeholder()"
+      [value]="value()"
+      (input)="onInput($event)"
+      [readonly]="readonly()"
+      [disabled]="disabled()"
+      [attr.aria-required]="required()"
+      [attr.aria-invalid]="invalid || null"
+      [attr.aria-describedby]="describedBy" />
 
     <!-- Password toggle -->
-    @if(type() === 'password'){
+    @if (type() === 'password') {
+      <sb-icon
+        class="cds--text-input--password__visibility__toggle"
+        (click)="togglePassword()"
+        [name]="showPassword() ? 'hide' : 'view'"
+        size="md"
+        tabindex="0"
+        aria-label="Toggle password visibility" />
+    }
 
-    <sb-icon class=" cds--text-input--password__visibility__toggle" (click)="togglePassword()" [name]="showPassword() ? 'hide' : 'view'"
-      size="md"></sb-icon>
+    <!-- Right icon -->
+    @if (iconRightName()) {
+      <sb-icon
+        class="cds--text-input__icon cds--text-input__icon--right"
+        [name]="iconRightName()"
+        size="md" />
     }
   </div>
 
-  @if(errorMessage){
-  <div class="cds--form-requirement">
-    {{ errorMessage }}
-  </div>
+  <!-- Helper -->
+  @if (helperText()) {
+    <div class="cds--form__helper-text" [id]="inputId + '-helper'">{{ helperText() }}</div>
   }
-  </div>
 
+  <!-- Hint -->
+  @if (hint()) {
+    <div class="cds--form__hint-text" [id]="inputId + '-hint'">{{ hint() }}</div>
+  }
+
+  <!-- Error -->
+  @if (errorMessage) {
+    <div class="cds--form-requirement" [id]="inputId + '-error'">{{ errorMessage }}</div>
+  }
 </div>
+}

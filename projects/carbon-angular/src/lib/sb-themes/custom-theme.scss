@@ -1,7 +1,7 @@
 @use 'sass:map';
 @use '@carbon/styles/scss/theme' as *; // ✅ use new theme API
 @use '@carbon/styles/scss/themes' as *; // ✅ built-in themes (white, g10, g90, g100)
-@use '../../styles/colors/purple' as *;
+// @use '../../styles/colors/purple' as *;
 
 /* Default theme (white) */
 :root {
@@ -27,21 +27,21 @@
 
 /* Custom-1 theme → large rounded corners */
 [data-carbon-theme='custom-1'] {
-  @include theme($g90); // base tokens
+  @include theme($white); // base tokens
 
   & {
     --sb--button-corner-radius: 2rem;
-    --sb--text-corner-radius: 2rem;
+    --sb--input-corner-radius: 2rem;
   }
 }
 
 /* Custom-2 theme → small rounded corners + centered text */
 [data-carbon-theme='custom-2'] {
-  @include theme($g90); // base tokens
+  @include theme($white); // base tokens
 
   & {
     --sb--button-corner-radius: 4px;
-    --sb--text-corner-radius: 12px;
+    --sb--input-corner-radius: 12px;
   }
 
   .sb--btn {
