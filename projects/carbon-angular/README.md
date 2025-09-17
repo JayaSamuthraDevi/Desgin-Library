@@ -1,63 +1,45 @@
-# CarbonAngular
+# Carbon Angular Design System
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.0.
+A reusable **Angular component library** built with the latest Angular (v20+) best practices.
+It follows Carbon Design principles and includes accessible, theme-ready UI components such as **Button, Input, Icons, and more**.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🚀 Features
 
-```bash
-ng generate component component-name
+- ✅ Angular v20+ (Standalone components, Signals, Modern Control Flow)
+- ✅ Carbon-styled UI components
+- ✅ Theme support (light/dark, custom themes)
+- ✅ Fully accessible (ARIA support, keyboard navigation)
+- ✅ Storybook integration for interactive docs
+- ✅ SCSS-based styling
+
+---
+
+## 📦 Installation
+
+Install Carbon Angular library
+
+```
+npm install carbon-angular
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Install Carbon styles (required for component styling)
 
-```bash
-ng generate --help
+```
+npm install @carbon/styles
 ```
 
-## Building
+## 🎨 Styles
 
-To build the library, run:
+Carbon components require the official @carbon/styles package.
+Import it once in your global styles (e.g., styles.scss):
 
-```bash
-ng build carbon-angular
+```
+@use '@carbon/styles';
 ```
 
-This command will compile your project, and the build artifacts will be placed in the `dist/` directory.
+## 📖 Documentation
 
-### Publishing the Library
-
-Once the project is built, you can publish your library by following these steps:
-
-1. Navigate to the `dist` directory:
-   ```bash
-   cd dist/carbon-angular
-   ```
-
-2. Run the `npm publish` command to publish your library to the npm registry:
-   ```bash
-   npm publish
-   ```
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Interactive Storybook docs are available here:
+👉 [Design-Library](https://jayasamuthradevi.github.io/Desgin-Library/)

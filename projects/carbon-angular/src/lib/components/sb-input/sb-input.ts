@@ -10,7 +10,7 @@ import {
 } from '@angular/core';
 import { NgControl, ControlValueAccessor, FormsModule } from '@angular/forms';
 import { SbIcon } from '../sb-icons/sb-icon';
-
+import {IconName} from '../sb-icons/icons';
 @Component({
   selector: 'sb-input',
   standalone: true,
@@ -42,8 +42,8 @@ export class SbInputComponent implements ControlValueAccessor {
   ariaLabel = input<string>('');
 
   // Icons
-  iconName = input<string>();
-  iconRightName = input<string>();
+ iconName = input<IconName | undefined>(undefined);
+iconRightName = input<IconName | undefined>(undefined);
 
   hint = input<string>('');
 

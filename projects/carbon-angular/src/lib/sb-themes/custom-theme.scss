@@ -1,7 +1,6 @@
 @use 'sass:map';
 @use '@carbon/styles/scss/theme' as *; // ✅ use new theme API
 @use '@carbon/styles/scss/themes' as *; // ✅ built-in themes (white, g10, g90, g100)
-// @use '../../styles/colors/purple' as *;
 
 /* Default theme (white) */
 :root {
