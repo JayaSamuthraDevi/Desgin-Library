@@ -11,6 +11,16 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "AllSizes",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  name: 'Size Variants',\n  render: () => ({\n    template: `\n      <div style=\"display: flex; gap: 1.5rem; align-items: center;\">\n        <ngc-icon name=\"add\" size=\"sm\" ariaLabel=\"Small icon\"></ngc-icon>\n        <ngc-icon name=\"add\" size=\"md\" ariaLabel=\"Medium icon\"></ngc-icon>\n        <ngc-icon name=\"add\" size=\"lg\" ariaLabel=\"Large icon\"></ngc-icon>\n        <ngc-icon name=\"add\" size=\"xl\" ariaLabel=\"XL icon\"></ngc-icon>\n        <ngc-icon name=\"add\" [size]=\"2.5\" ariaLabel=\"2.5rem icon\"></ngc-icon>\n      </div>\n    `,\n  }),\n}"
+            },
+            {
                 "name": "CenteredText",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -31,6 +41,16 @@
                 "defaultValue": "{\n  render: (args) => ({\n    props: args,\n    template: `\n      <div style=\"display: flex; gap: 1rem; align-items: center;\">\n        <sb-icon name=\"add\" size=\"lg\" color=\"red\"></sb-icon>\n        <sb-icon name=\"add\" size=\"lg\" color=\"green\"></sb-icon>\n        <sb-icon name=\"add\" size=\"lg\" color=\"blue\"></sb-icon>\n        <sb-icon name=\"add\" size=\"lg\" color=\"#ff9900\"></sb-icon>\n      </div>\n    `,\n  }),\n}"
             },
             {
+                "name": "CustomColor",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  name: 'Custom Fill Color',\n  args: {\n    name: 'add',\n    size: 'lg',\n    color: '#e91e63', // pink\n    ariaLabel: 'Add icon in pink',\n  },\n}"
+            },
+            {
                 "name": "CustomName",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -39,6 +59,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    appName: 'Customer Portal',\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  name: 'SVG Icon (Default)',\n  args: {\n    name: 'add',\n    size: 'md',\n    color: 'currentColor',\n    ariaLabel: 'Add icon',\n  },\n}"
             },
             {
                 "name": "Default",
@@ -78,7 +108,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    name: 'add' as IconName,\n    size: 'md',\n    color: 'currentColor',\n  },\n}"
+                "defaultValue": "{\n  args: {\n    name: 'add' as IconName,\n    size: 'md',\n    color: 'currentColor',\n    ariaLabel: null,\n    svgClass: null,\n  },\n}"
             },
             {
                 "name": "Default",
@@ -131,6 +161,46 @@
                 "defaultValue": "{\n  args: {\n    label: 'Add Item',\n    variant: 'primary',\n    iconName: 'add',\n    iconPosition: 'left'\n  },\n}"
             },
             {
+                "name": "iconRegistry",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "new IconRegistry()"
+            },
+            {
+                "name": "ImageIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  name: 'Image Icon',\n  args: {\n    name: 'logo',\n    size: 'lg',\n    color: 'black',\n    ariaLabel: 'Company logo',\n  },\n}"
+            },
+            {
+                "name": "LazyLoadedIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  name: 'Lazy Loaded Icon',\n  args: {\n    name: 'dynamic',\n    size: 'xl',\n    color: 'blue',\n    ariaLabel: 'Dynamic icon',\n  },\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<NgcIcon>",
+                "defaultValue": "{\n  title: 'Components/NgcIcon',\n  component: NgcIcon,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule],\n      providers: [{ provide: IconRegistry, useValue: iconRegistry }],\n    }),\n  ],\n  argTypes: {\n    name: {\n      control: 'text',\n      description: 'Name of the icon registered in IconRegistry',\n      defaultValue: 'add',\n    },\n    size: {\n      control: 'select',\n      options: ['sm', 'md', 'lg', 'xl', 1, 2, 3],\n      defaultValue: 'md',\n      description: 'Size of the icon (preset or rem number)',\n    },\n    color: {\n      control: 'color',\n      defaultValue: 'currentColor',\n      description: 'Fill color of the icon',\n    },\n    ariaLabel: {\n      control: 'text',\n      defaultValue: null,\n      description: 'Optional ARIA label (adds accessibility).',\n    },\n  },\n}"
+            },
+            {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -158,7 +228,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<SbIcon>",
-                "defaultValue": "{\n  title: 'Components/Icon',\n  component: SbIcon,\n  tags: ['autodocs'],\n  argTypes: {\n    name: {\n      control: { type: 'select' },\n      options: Object.keys((await import('./icons')).ICONS) as IconName[],\n    },\n    size: {\n      control: { type: 'select' },\n      options: ['sm', 'md', 'lg', 'xl', 2, 3, 4], // string presets + numeric\n    },\n    color: {\n      control: 'color',\n    },\n  },\n}"
+                "defaultValue": "{\n  title: 'Components/Icon',\n  component: SbIcon,\n  tags: ['autodocs'],\n  argTypes: {\n    name: {\n      control: { type: 'select' },\n      options: Object.keys((await import('./icons')).ICONS) as IconName[],\n    },\n    size: {\n      control: { type: 'select' },\n      options: ['sm', 'md', 'lg', 'xl', 2, 3, 4], // string presets + numeric\n    },\n    color: {\n      control: 'color',\n    },\n    ariaLabel: { control: 'text' },\n    svgClass: { control: 'text' },\n  },\n}"
             },
             {
                 "name": "meta",
@@ -179,6 +249,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<ModalComponent>",
                 "defaultValue": "{\n  title: 'Components/Modal',\n  component: ModalComponent,\n  tags: ['autodocs'],\n  argTypes: {\n    isOpen: { control: 'boolean' },\n    title: { control: 'text' },\n    size: {\n      control: 'select',\n      options: ['sm', 'md', 'lg', 'xl'],\n    },\n    cancelLabel: { control: 'text' },\n    confirmLabel: { control: 'text' },\n    cancelDisabled: { control: 'boolean' },\n    confirmDisabled: { control: 'boolean' },\n    showFooter: { control: 'boolean' },\n    showDefaultFooter: { control: 'boolean' },\n    close: { action: 'close' },\n    cancel: { action: 'cancel' },\n    confirm: { action: 'confirm' },\n  },\n  args: {\n    isOpen: true,\n    title: 'Example Modal',\n    size: 'md',\n    cancelLabel: 'Cancel',\n    confirmLabel: 'Confirm',\n    cancelDisabled: false,\n    confirmDisabled: false,\n    showFooter: true,\n    showDefaultFooter: true,\n  },\n}"
+            },
+            {
+                "name": "NoLabelHidden",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  name: 'ARIA Hidden by Default',\n  args: {\n    name: 'add',\n    size: 'md',\n    color: 'black',\n    ariaLabel: null, // triggers aria-hidden=\"true\"\n  },\n}"
             },
             {
                 "name": "preview",
@@ -307,6 +387,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<NgcIcon>",
+                "file": "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<SbButton>",
                 "file": "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts",
                 "deprecated": false,
@@ -372,6 +463,88 @@
         ],
         "enumerations": [],
         "groupedVariables": {
+            "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts": [
+                {
+                    "name": "AllSizes",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  name: 'Size Variants',\n  render: () => ({\n    template: `\n      <div style=\"display: flex; gap: 1.5rem; align-items: center;\">\n        <ngc-icon name=\"add\" size=\"sm\" ariaLabel=\"Small icon\"></ngc-icon>\n        <ngc-icon name=\"add\" size=\"md\" ariaLabel=\"Medium icon\"></ngc-icon>\n        <ngc-icon name=\"add\" size=\"lg\" ariaLabel=\"Large icon\"></ngc-icon>\n        <ngc-icon name=\"add\" size=\"xl\" ariaLabel=\"XL icon\"></ngc-icon>\n        <ngc-icon name=\"add\" [size]=\"2.5\" ariaLabel=\"2.5rem icon\"></ngc-icon>\n      </div>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "CustomColor",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  name: 'Custom Fill Color',\n  args: {\n    name: 'add',\n    size: 'lg',\n    color: '#e91e63', // pink\n    ariaLabel: 'Add icon in pink',\n  },\n}"
+                },
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  name: 'SVG Icon (Default)',\n  args: {\n    name: 'add',\n    size: 'md',\n    color: 'currentColor',\n    ariaLabel: 'Add icon',\n  },\n}"
+                },
+                {
+                    "name": "iconRegistry",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "new IconRegistry()"
+                },
+                {
+                    "name": "ImageIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  name: 'Image Icon',\n  args: {\n    name: 'logo',\n    size: 'lg',\n    color: 'black',\n    ariaLabel: 'Company logo',\n  },\n}"
+                },
+                {
+                    "name": "LazyLoadedIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  name: 'Lazy Loaded Icon',\n  args: {\n    name: 'dynamic',\n    size: 'xl',\n    color: 'blue',\n    ariaLabel: 'Dynamic icon',\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<NgcIcon>",
+                    "defaultValue": "{\n  title: 'Components/NgcIcon',\n  component: NgcIcon,\n  tags: ['autodocs'],\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule],\n      providers: [{ provide: IconRegistry, useValue: iconRegistry }],\n    }),\n  ],\n  argTypes: {\n    name: {\n      control: 'text',\n      description: 'Name of the icon registered in IconRegistry',\n      defaultValue: 'add',\n    },\n    size: {\n      control: 'select',\n      options: ['sm', 'md', 'lg', 'xl', 1, 2, 3],\n      defaultValue: 'md',\n      description: 'Size of the icon (preset or rem number)',\n    },\n    color: {\n      control: 'color',\n      defaultValue: 'currentColor',\n      description: 'Fill color of the icon',\n    },\n    ariaLabel: {\n      control: 'text',\n      defaultValue: null,\n      description: 'Optional ARIA label (adds accessibility).',\n    },\n  },\n}"
+                },
+                {
+                    "name": "NoLabelHidden",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  name: 'ARIA Hidden by Default',\n  args: {\n    name: 'add',\n    size: 'md',\n    color: 'black',\n    ariaLabel: null, // triggers aria-hidden=\"true\"\n  },\n}"
+                }
+            ],
             "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts": [
                 {
                     "name": "CenteredText",
@@ -483,7 +656,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    name: 'add' as IconName,\n    size: 'md',\n    color: 'currentColor',\n  },\n}"
+                    "defaultValue": "{\n  args: {\n    name: 'add' as IconName,\n    size: 'md',\n    color: 'currentColor',\n    ariaLabel: null,\n    svgClass: null,\n  },\n}"
                 },
                 {
                     "name": "meta",
@@ -493,7 +666,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<SbIcon>",
-                    "defaultValue": "{\n  title: 'Components/Icon',\n  component: SbIcon,\n  tags: ['autodocs'],\n  argTypes: {\n    name: {\n      control: { type: 'select' },\n      options: Object.keys((await import('./icons')).ICONS) as IconName[],\n    },\n    size: {\n      control: { type: 'select' },\n      options: ['sm', 'md', 'lg', 'xl', 2, 3, 4], // string presets + numeric\n    },\n    color: {\n      control: 'color',\n    },\n  },\n}"
+                    "defaultValue": "{\n  title: 'Components/Icon',\n  component: SbIcon,\n  tags: ['autodocs'],\n  argTypes: {\n    name: {\n      control: { type: 'select' },\n      options: Object.keys((await import('./icons')).ICONS) as IconName[],\n    },\n    size: {\n      control: { type: 'select' },\n      options: ['sm', 'md', 'lg', 'xl', 2, 3, 4], // string presets + numeric\n    },\n    color: {\n      control: 'color',\n    },\n    ariaLabel: { control: 'text' },\n    svgClass: { control: 'text' },\n  },\n}"
                 },
                 {
                     "name": "Sizes",
@@ -682,6 +855,19 @@
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
+            "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<NgcIcon>",
+                    "file": "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "projects/carbon-angular/src/lib/components/sb-button/sb-button.stories.ts": [
                 {
                     "name": "Story",
@@ -777,6 +963,96 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "preview",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "AllSizes",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CustomColor",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "iconRegistry",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ImageIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "LazyLoadedIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "NoLabelHidden",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/carbon-angular/src/lib/components/ngc-icons/ngc-icon.stories.ts",
+                "type": "type alias",
+                "linktype": "miscellaneous",
+                "linksubtype": "typealias",
+                "name": "Story",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

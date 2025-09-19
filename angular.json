@@ -41,7 +41,7 @@
             "configDir": "projects/carbon-angular/.storybook",
             "browserTarget": "carbon-angular:build",
             "port": 6006,
-             "styles": [
+            "styles": [
               "projects/carbon-angular/src/styles/carbon.scss"
             ]
           }
@@ -52,7 +52,7 @@
             "configDir": "projects/carbon-angular/.storybook",
             "browserTarget": "carbon-angular:build",
             "outputDir": "dist/storybook/carbon-angular",
-             "styles": [
+            "styles": [
               "projects/carbon-angular/src/styles/carbon.scss"
             ]
           }

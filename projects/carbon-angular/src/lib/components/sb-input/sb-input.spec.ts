@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { By } from '@angular/platform-browser';
 import { SbInputComponent } from './sb-input';
 import { SbIcon } from '../sb-icons/sb-icon';
+import { provideZonelessChangeDetection } from '@angular/core';
 
 describe('SbInputComponent', () => {
   let component: SbInputComponent;
@@ -11,6 +12,7 @@ describe('SbInputComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [SbInputComponent, FormsModule, SbIcon],
+      providers: [provideZonelessChangeDetection()],
     }).compileComponents();
 
     fixture = TestBed.createComponent(SbInputComponent);

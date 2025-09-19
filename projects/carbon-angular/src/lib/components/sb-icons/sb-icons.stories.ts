@@ -1,23 +1,24 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { SbIcon } from './sb-icon';
-import { IconName } from './icons';
+import { ICONS, IconName } from './icons';
 
 const meta: Meta<SbIcon> = {
-  title: 'Components/Icon',
+  title: 'Carbon/Icon',
   component: SbIcon,
   tags: ['autodocs'],
   argTypes: {
     name: {
       control: { type: 'select' },
-      options: Object.keys((await import('./icons')).ICONS) as IconName[],
+      options: Object.keys(ICONS) as IconName[],
     },
     size: {
       control: { type: 'select' },
-      options: ['sm', 'md', 'lg', 'xl', 2, 3, 4], // string presets + numeric
+      options: ['sm', 'md', 'lg', 'xl', 2, 3, 4], // presets + numbers
     },
-    color: {
-      control: 'color',
-    },
+    color: { control: 'color' },
+    ariaLabel: { control: 'text' },
+    decorative: { control: 'boolean' },
+    svgClass: { control: 'text' },
   },
 };
 
@@ -26,15 +27,15 @@ type Story = StoryObj<SbIcon>;
 
 export const Default: Story = {
   args: {
-    name: 'add' as IconName,
+    name: 'add',
     size: 'md',
     color: 'currentColor',
+    ariaLabel: 'Add',
   },
 };
 
 export const Sizes: Story = {
-  render: (args) => ({
-    props: args,
+  render: () => ({
     template: `
       <div style="display: flex; gap: 1rem; align-items: center;">
         <sb-icon name="add" size="sm"></sb-icon>
@@ -48,8 +49,7 @@ export const Sizes: Story = {
 };
 
 export const Colors: Story = {
-  render: (args) => ({
-    props: args,
+  render: () => ({
     template: `
       <div style="display: flex; gap: 1rem; align-items: center;">
         <sb-icon name="add" size="lg" color="red"></sb-icon>
@@ -59,4 +59,19 @@ export const Colors: Story = {
       </div>
     `,
   }),
+};
+
+export const Decorative: Story = {
+  args: {
+    name: 'close',
+    size: 'lg',
+    decorative: true,
+  },
+};
+
+export const WithCustomClass: Story = {
+  args: {
+    name: 'edit',
+    svgClass: 'custom-class',
+  },
 };
